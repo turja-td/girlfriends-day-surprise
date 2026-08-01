@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>For You, My Arpita 🤍</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Cinematic Black Overlay for the very beginning -->
+  <div id="intro-curtain"></div>
+
+  <!-- Falling Flowers Container -->
+  <div id="flower-container"></div>
+
+  <!-- Background Audio (Hidden) -->
+  <audio id="bg-music" loop>
+    <source src="audio.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- SCREEN 1: The Invitation -->
+  <section id="screen-1" class="screen active">
+    <div class="content-wrapper centered">
+      <p class="subtitle dramatic-text reveal-1">To my dearest Arpii 🤍</p>
+      <h1 class="title dramatic-text reveal-2">In a world of billions...</h1>
+      <p class="subtitle dramatic-text reveal-3">You are my person, My one and only...</p>
+      <button class="action-btn heartbeat dramatic-text reveal-4" onclick="startJourney()">Let's start!</button>
+    </div>
+  </section>
+
+  <!-- SCREEN 2: Her Solo Photos (Vertical Swipe) -->
+  <section id="screen-2" class="screen hidden">
+    <div class="content-wrapper">
+      <h2 class="title dramatic-text reveal-1">There is beauty...</h2>
+      <p class="subtitle dramatic-text reveal-2">...and then there is you, redefining it entirely.</p>
+      <div class="scroll-hint dramatic-text reveal-2">Scroll downnn! 👇</div>
+      
+      <div class="scroll-container dramatic-text reveal-3">
+        <div class="photo-frame polaroid tilt-left">
+          <img src="her_1.jpg" alt="Her 1">
+        </div>
+        <div class="photo-frame polaroid tilt-right">
+          <img src="her_2.jpg" alt="Her 2">
+        </div>
+        <div class="photo-frame polaroid tilt-left">
+          <img src="her_3.jpg" alt="Her 3">
+        </div>
+        <div class="photo-frame polaroid tilt-right">
+          <img src="her_4.jpg" alt="Her 4">
+        </div>
+      </div>
+
+      <button class="action-btn mt-auto dramatic-text reveal-4" onclick="nextScreen('screen-2', 'screen-3')">Now for us...</button>
+    </div>
+  </section>
+
+  <!-- SCREEN 3: Couple Photos (Vertical Swipe) -->
+  <section id="screen-3" class="screen hidden">
+    <div class="content-wrapper">
+      <h2 class="title dramatic-text reveal-1">Two lives merging...</h2>
+      <p class="subtitle dramatic-text reveal-2">...to create my absolute favorite universe.</p>
+      <div class="scroll-hint dramatic-text reveal-2">Scroll downnn! 👇</div>
+      
+      <div class="scroll-container dramatic-text reveal-3">
+        <img class="carousel-img" src="us_1.jpg" alt="Us 1">
+        <img class="carousel-img" src="us_2.jpg" alt="Us 2">
+        <img class="carousel-img" src="us_3.jpg" alt="Us 3">
+        <img class="carousel-img" src="us_4.jpg" alt="Us 4">
+        <img class="carousel-img" src="us_5.jpg" alt="Us 5">
+      </div>
+
+      <button class="action-btn mt-auto dramatic-text reveal-4" onclick="nextScreen('screen-3', 'screen-4')">Onto the next...</button>
+    </div>
+  </section>
+
+  <!-- SCREEN 4: The Vow -->
+  <section id="screen-4" class="screen hidden">
+    <div class="content-wrapper centered">
+      <h2 class="title dramatic-text reveal-1">My confession to you, My love.</h2>
+      <div class="letter-box dramatic-text reveal-2">
+        <p class="letter-text">
+          You came into my life unexpectedly... yet I wouldn't have it any other way. You quickly became my stubborn heart's favourite notification, and so quickly became my favourite person.
+
+Arpita, my love, thank you for being mine. Thank you for making me smile even on the worst of days... and thank you for loving me.
+<br>
+I love you.
+<br>
+Happy Girlfriend's Day, my lovely.
+        </p>
+      </div>
+      <button class="action-btn mt-auto dramatic-text reveal-3" onclick="nextScreen('screen-4', 'screen-5')">One more press...</button>
+    </div>
+  </section>
+
+  <!-- SCREEN 5: The Video Finale -->
+  <section id="screen-5" class="screen hidden">
+    <div class="content-wrapper centered">
+      <h2 class="title dramatic-text reveal-1">My Feelings For You.</h2>
+      
+      <div class="video-container dramatic-text reveal-2">
+        <video id="finale-video" controls playsinline>
+          <source src="video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <p class="finale-msg" id="post-video-msg">Made with love by Turja🤍.</p>
+      
+      <!-- Restart Button (Hidden initially) -->
+      <button id="restart-btn" class="action-btn mt-auto" onclick="location.reload()">Experience again</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
